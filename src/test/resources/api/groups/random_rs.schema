@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "group": {
+      "type": "string"
+    },
+    "htmlCode": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "unicode": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    }
+  }
+}
