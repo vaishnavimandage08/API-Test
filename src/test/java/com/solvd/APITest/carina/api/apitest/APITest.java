@@ -1,4 +1,4 @@
-package com.solvd.APITest.carina.api;
+package com.solvd.APITest.carina.api.apitest;
 
 
 import com.solvd.APITest.carina.api.emoji.GetCategory;
