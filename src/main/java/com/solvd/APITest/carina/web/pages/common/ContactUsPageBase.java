@@ -1,11 +1,11 @@
-package com.solvd.APITest.carina.api.webautomation;
+package com.solvd.APITest.carina.web.pages.common;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class ContactUsPageBase extends AbstractPage {
+public abstract class ContactUsPageBase extends AbstractPage {
     @FindBy(xpath = "//input[@aria-label='Full name']")
     private ExtendedWebElement fullNameField;
 
@@ -28,7 +28,7 @@ public class ContactUsPageBase extends AbstractPage {
     @FindBy(xpath = "//button[text()='Accept']")
     private ExtendedWebElement acceptCookies;
 
-    protected ContactUsPageBase(WebDriver driver) {
+    public ContactUsPageBase(WebDriver driver) {
         super(driver);
     }
 

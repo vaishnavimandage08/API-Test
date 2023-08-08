@@ -1,5 +1,10 @@
 package com.solvd.APITest.carina.api.androidautomation;
 
+import com.solvd.APITest.carina.mobile.android.WelcomePage;
+import com.solvd.APITest.carina.mobile.common.AddToCartPageBase;
+import com.solvd.APITest.carina.mobile.common.EmptyCartPageBase;
+import com.solvd.APITest.carina.mobile.common.LoginPageBase;
+import com.solvd.APITest.carina.mobile.common.SearchPageBase;
 import com.zebrunner.agent.core.annotation.TestLabel;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;

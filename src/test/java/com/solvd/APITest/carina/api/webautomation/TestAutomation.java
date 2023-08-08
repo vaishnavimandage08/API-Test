@@ -1,5 +1,11 @@
 package com.solvd.APITest.carina.api.webautomation;
 
+import com.solvd.APITest.carina.web.pages.common.BlogPageBase;
+import com.solvd.APITest.carina.web.pages.common.ContactUsPageBase;
+import com.solvd.APITest.carina.web.pages.common.HomePageBase;
+import com.solvd.APITest.carina.web.pages.common.TestAutomationPageBase;
+//import com.solvd.APITest.carina.web.pages.desktop.HomePage;
+import com.solvd.APITest.carina.web.pages.mobile.HomePage;
 import com.zebrunner.agent.core.annotation.TestLabel;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
@@ -14,9 +20,9 @@ public class TestAutomation implements IAbstractTest {
     @TestPriority(Priority.P1)
     @TestLabel(name = "feature", value = {"web", "regression"})
     public void testOpenWebPage() {
-        HomePage homePage = new HomePage(getDriver());
+        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);;
         homePage.open();
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
     }
 
     @Test
@@ -24,10 +30,10 @@ public class TestAutomation implements IAbstractTest {
     @TestPriority(Priority.P1)
     @TestLabel(name = "feature", value = {"web", "regression"})
     public void testAutomationServicesPresentOnPage() {
-        HomePage homePage = new HomePage(getDriver());
+        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);;
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
-        TestAutomationPageBase page = homePage.selectService("Devops");
+        TestAutomationPageBase page = homePage.selectService("Test Automation Services");
         Assert.assertTrue(page.isPageOpened(), "Test Automation page is not opened");
         final String searchQ = "Test Automation Services";
 
@@ -41,7 +47,7 @@ public class TestAutomation implements IAbstractTest {
     @TestPriority(Priority.P1)
     @TestLabel(name = "feature", value = {"web", "regression"})
     public void testContactPageNavigation() {
-        HomePage homePage = new HomePage(getDriver());
+        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);;
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
         ContactUsPageBase contact = homePage.clickContactUsButton();
@@ -56,7 +62,7 @@ public class TestAutomation implements IAbstractTest {
     @TestPriority(Priority.P1)
     @TestLabel(name = "feature", value = {"web", "regression"})
     public void testContactUsSubmissionInvalidEmail() {
-        HomePage homePage = new HomePage(getDriver());
+        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);;
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
 
@@ -80,7 +86,7 @@ public class TestAutomation implements IAbstractTest {
     @TestPriority(Priority.P1)
     @TestLabel(name = "feature", value = {"web", "regression"})
     public void testContactUsSubmissionInvalidMessage() {
-        HomePage homePage = new HomePage(getDriver());
+        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);;
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
         ContactUsPageBase contact = homePage.clickContactUsButton();
@@ -96,5 +102,19 @@ public class TestAutomation implements IAbstractTest {
         boolean isInvalidMessageText = contact.isInvalidMessagePresent();
 
         Assert.assertTrue(isInvalidMessageText, "Please enter at least 10 characters.");
+    }
+    @Test
+    @MethodOwner(owner = "vmandage")
+    @TestPriority(Priority.P1)
+    @TestLabel(name = "feature", value = {"web", "regression"})
+    public void testBlogPresentOnPage() {
+        HomePage homePage = new HomePage(getDriver());
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
+        BlogPageBase blog = homePage.clickCBlogButton();
+        String text = "QA";
+        blog.enterSearchField(text);
+        boolean result = blog.isFieldPresent(text);
+        Assert.assertTrue(result,"Text not found on the page!");
     }
 }

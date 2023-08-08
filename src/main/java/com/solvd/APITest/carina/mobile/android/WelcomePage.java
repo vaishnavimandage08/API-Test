@@ -1,5 +1,9 @@
-package com.solvd.APITest.carina.api.androidautomation;
+package com.solvd.APITest.carina.mobile.android;
 
+import com.solvd.APITest.carina.mobile.common.EmptyCartPageBase;
+import com.solvd.APITest.carina.mobile.common.LoginPageBase;
+import com.solvd.APITest.carina.mobile.common.SearchPageBase;
+import com.solvd.APITest.carina.mobile.common.WelcomePageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;

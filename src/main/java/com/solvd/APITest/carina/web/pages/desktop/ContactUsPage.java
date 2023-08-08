@@ -1,5 +1,6 @@
-package com.solvd.APITest.carina.api.webautomation;
+package com.solvd.APITest.carina.web.pages.desktop;
 
+import com.solvd.APITest.carina.web.pages.common.ContactUsPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;
 

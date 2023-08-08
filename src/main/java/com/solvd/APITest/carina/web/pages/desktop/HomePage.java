@@ -1,5 +1,9 @@
-package com.solvd.APITest.carina.api.webautomation;
+package com.solvd.APITest.carina.web.pages.desktop;
 
+import com.solvd.APITest.carina.web.pages.common.BlogPageBase;
+import com.solvd.APITest.carina.web.pages.common.ContactUsPageBase;
+import com.solvd.APITest.carina.web.pages.common.HomePageBase;
+import com.solvd.APITest.carina.web.pages.common.TestAutomationPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +20,10 @@ public class HomePage extends HomePageBase {
     @FindBy(xpath = "//a[@aria-label='Open contact us form']")
     private ExtendedWebElement contactUsButton;
 
-    protected HomePage(WebDriver driver) {
+    @FindBy(linkText = "Blog")
+    private ExtendedWebElement blogButton;
+
+    public HomePage(WebDriver driver) {
         super(driver);
     }
 
@@ -36,5 +43,9 @@ public class HomePage extends HomePageBase {
     public ContactUsPageBase clickContactUsButton() {
         contactUsButton.click();
         return initPage(driver, ContactUsPageBase.class);
+    }
+    public BlogPageBase clickCBlogButton() {
+        blogButton.click();
+        return initPage(driver, BlogPageBase.class);
     }
 }

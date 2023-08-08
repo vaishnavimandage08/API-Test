@@ -1,4 +1,4 @@
-package com.solvd.APITest.carina.api.androidautomation;
+package com.solvd.APITest.carina.mobile.common;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
@@ -15,7 +15,7 @@ public class LoginPageBase extends AbstractPage {
     @FindBy(id = "com.chewy.android:id/passwordInput")
     private ExtendedWebElement passwordField;
 
-    @FindBy(xpath = "//*[@text ='Sign In']")
+    @FindBy(linkText = "//*[@text ='Sign In']")
     private ExtendedWebElement signInButton;
 
     @FindBy(id = "com.chewy.android:id/textinput_error")

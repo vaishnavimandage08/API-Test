@@ -1,4 +1,4 @@
-package com.solvd.APITest.carina.api.androidautomation;
+package com.solvd.APITest.carina.mobile.common;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
